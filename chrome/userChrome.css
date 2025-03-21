@@ -1,0 +1,120 @@
+.tab-background {
+    border-radius: 8px 8px 0 0 !important;
+    margin: 0 1px !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-bottom: none !important;
+    background-clip: padding-box !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background {
+    background-color: var(--toolbar-bgcolor) !important;
+    color: var(--toolbar-color) !important;
+    border-top-color: transparent !important;
+}
+
+.tabbrowser-tab:not(:last-child):not([selected="true"]):not([multiselected="true"]):not(:hover) .tab-background::after,
+.tabbrowser-tab:not(:first-child):not([selected="true"]):not([multiselected="true"]):not(:hover) .tab-background::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    width: 1px;
+    background-color: var(--toolbar-color) !important;
+    opacity: 0.2 !important;
+    z-index: 2;
+}
+
+.tabbrowser-tab:not(:first-child):not([selected="true"]):not([multiselected="true"]):not(:hover) .tab-background::before {
+    left: -0.5px;
+}
+
+.tabbrowser-tab:not(:last-child):not([selected="true"]):not([multiselected="true"]):not(:hover) .tab-background::after {
+    right: -0.5px;
+}
+
+.tabbrowser-tab[selected="true"] + .tabbrowser-tab .tab-background::before,
+.tabbrowser-tab:has(+ .tabbrowser-tab[selected="true"]) .tab-background::after {
+    display: none !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+    z-index: 1 !important;
+}
+
+.tabbrowser-tab {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tabbrowser-tab, .tab-background {
+    transition: all 0.2s ease !important;
+}
+
+.tab-icon-image:not([src]) {
+    background-image: url('/icons/favicon.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 16px !important;
+    height: 16px !important;
+    opacity: 0.7 !important;
+    display: inline-block !important;
+    color: var(--toolbar-color) !important;
+    filter: var(--lwt-toolbarbutton-icon-filter, none) !important;
+}
+
+.tab-icon-image[src=""] {
+    background-image: url('/icons/favicon.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 16px !important;
+    height: 16px !important;
+    opacity: 0.7 !important;
+    display: inline-block !important;
+    color: var(--toolbar-color) !important;
+    filter: var(--lwt-toolbarbutton-icon-filter, none) !important;
+}
+
+.tab-icon-image:not([src]), .tab-icon-image[src=""] {
+    fill: var(--toolbar-color) !important;
+    stroke: var(--toolbar-color) !important;
+    -moz-context-properties: fill, stroke !important;
+}
+
+.tabbrowser-tab[usercontextid] .tab-background {
+    border-top: 1px solid var(--identity-tab-color) !important;
+}
+
+.tabbrowser-tab[usercontextid][selected="true"] .tab-background {
+    border-top: 1px solid var(--identity-tab-color) !important;
+}
+
+.tabbrowser-tab[usercontextid]:hover .tab-background {
+    border-top: 1px solid var(--identity-tab-color) !important;
+}
+
+.identity-color-blue {
+    --identity-tab-color: #37adff !important;
+}
+.identity-color-turquoise {
+    --identity-tab-color: #00c79a !important;
+}
+.identity-color-green {
+    --identity-tab-color: #51cd00 !important;
+}
+.identity-color-yellow {
+    --identity-tab-color: #ffcb00 !important;
+}
+.identity-color-orange {
+    --identity-tab-color: #ff9f00 !important;
+}
+.identity-color-red {
+    --identity-tab-color: #ff613d !important;
+}
+.identity-color-pink {
+    --identity-tab-color: #ff4bda !important;
+}
+.identity-color-purple {
+    --identity-tab-color: #af51f5 !important;
+}
